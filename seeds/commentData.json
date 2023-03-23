@@ -1,0 +1,16 @@
+[
+    {
+        "id": "1", 
+        "text": "I try to avoid using jQuery when I can", 
+        "date_created": "2/19/20", 
+        "user_id": "2", 
+        "post_id": "1"
+    },
+    {
+        "id": "2",
+        "text": "I liked learning about ORM too",
+        "date_created": "8/3/19",
+        "user_id": "1",
+        "post_id": "2"
+    }
+]
