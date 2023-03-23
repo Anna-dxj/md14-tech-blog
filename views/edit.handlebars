@@ -1,0 +1,13 @@
+ {{> post-overview}}
+
+<h3>Edit Post</h3>
+ <form>
+    <div>
+        <label for="post-title">Title</label>
+        <input name="post-title" type="text" value="{{post.title}}"/>
+        <label for="post-content">Content</label>
+        <input name="post-content" type="textarea" value="{{post.text}}"/>
+        <button>Update Post</button>
+        <button>Delete</button>
+    </div>
+ </form>

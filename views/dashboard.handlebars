@@ -1,0 +1,10 @@
+<section>
+    <ul>
+        {{#each posts as |post|}}
+        <li>
+            <a href="/edit/{{post.id}}">{{post.title}}</a>
+        </li>
+        {{/each}}
+    </ul>
+</section>
+<button>+ New Post</button>

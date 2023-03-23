@@ -1,0 +1,12 @@
+<article>
+    <div>
+        <div>
+            <h2>{{title}}</h2>
+            <p>Posted by {{user.name}} on {{format_date date_created}}</p>
+        </div>
+        <div>
+            <p>{{text}}</p>
+        </div>
+    </div>
+    {{ > comments}}
+</article>

@@ -1,0 +1,15 @@
+<div>
+    <div>  </div>
+    <form>
+        <label>Comments</label>
+        <input name="comment" type="textarea"/>
+    </form>
+</div>
+<div>
+    {{#each comments as |comment|}}
+    <div>
+        <p>{{comment.text}}</p>
+        <p>- {{user.name}}, {{format_date comment.date_created}}</p>
+    </div>
+    {{/each}}
+</div>
