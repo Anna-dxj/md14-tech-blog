@@ -4,13 +4,15 @@
     </div>
     <form>
         <div>
-            <label for="post-title-update">Title</label>
-            <input type="text" id="post-title-update" value="{{posts.title}}"/>
+            <label for="post-title-input">Title</label>
+            <input type="text" id="post-title-input" value="{{posts.title}}"/>
 
-            <label for="post-body-update">Content</label>
-            <textarea>{{posts.text}}</textarea>
+            <label for="post-body-input">Content</label>
+            <textarea id="post-body-input">{{posts.text}}</textarea>
         </div>
-        <button id="update-post-btn" data-update-id="{{posts.id}}">Update</button>
+        <button id="update-post-btn" data-update-id="{{posts.id}}" type="button">Update</button>
+        <button id="delete-post-btn" data-update-id="{{post.id}}" type="button">Delete</button>
     </form>
 </section>
-<script src="/js/post.js"></script>
+<script src="/js/update.js"></script>
+<script src="/js/delete.js"></script>
