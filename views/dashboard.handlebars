@@ -1,11 +1,11 @@
-<div>
-  <ul>
+<div class="container col-sm d-flex justify-content-center py-2 my-2">
+    <button type="button" class="btn btn-primary"><a class="text-white text-decoration-none" href="/new-post">+ New Post</a></button>
+</div>
+<div class="card col-sm">
+  <ul class="list-group list-group-flush">
 {{#each posts as |post| }}
-    <li><a href="/edit/{{post.id}}">{{post.title}}</a></li>
+    <li class="sm-col list-group-item"><a class="text-black text-decoration-none" href="/edit/{{post.id}}">{{post.title}}</a></li>
 {{/each}}
   </ul>
-</div>
-<div>
-    <button><a href="/new-post">+ New Post</a></button>
 </div>
 <script src="./js/post.js"></script>

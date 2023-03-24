@@ -1,0 +1,17 @@
+:root {
+    --light-blue: #ADD8E6;
+    --navy-blue: #212148;
+    --coral: #ff5f5f;
+}
+
+.custom-backrgound {
+    background-color: var(--light-blue);
+}
+
+.custom-title {
+    color: var(--coral)
+}
+
+.custom-navbar-link {
+    color: var(--navy-blue)
+}
