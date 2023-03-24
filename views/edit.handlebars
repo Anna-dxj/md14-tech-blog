@@ -1,13 +1,16 @@
- {{> post-overview}}
-
-<h3>Edit Post</h3>
- <form>
+<section>
     <div>
-        <label for="post-title">Title</label>
-        <input name="post-title" type="text" value="{{post.title}}"/>
-        <label for="post-content">Content</label>
-        <input name="post-content" type="textarea" value="{{post.text}}"/>
-        <button>Update Post</button>
-        <button>Delete</button>
+        <h2>Edit Post</h2>
     </div>
- </form>
+    <form>
+        <div>
+            <label for="post-title-update">Title</label>
+            <input type="text" id="post-title-update" value="{{posts.title}}"/>
+
+            <label for="post-body-update">Content</label>
+            <textarea>{{posts.text}}</textarea>
+        </div>
+        <button id="update-post-btn" data-update-id="{{posts.id}}">Update</button>
+    </form>
+</section>
+<script src="/js/post.js"></script>

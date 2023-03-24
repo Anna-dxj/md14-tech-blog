@@ -18,18 +18,21 @@ router.get('/', async (req, res) => {
         res.status(500).json(error)
     }
 })
-router.post('/', withAuth, async (req, res) => {
-    try {
-        const newComment = await Comment.create({
-            ...req.body,
-            user_id: req.session.user_id,
-        });
 
-        res.status(200).json(newComment);
+router.post('/', async (req, res) => {
+    try {
+      const newComment = await Comment.create({
+        text: req.body.text,
+        post_id: req.body.post_id,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(200).json(newComment);
     } catch (error) {
-        res.status(500).json(error)
+      res.status(400).json(error);
     }
-})
+  });
+
 router.delete('/:id', withAuth, async (req, res) => {
     try {
         const commentData = await Comment.destroy({
