@@ -1,0 +1,21 @@
+<section class="container">
+    <div>
+        <h2>Edit Post</h2>
+    </div>
+    <form class="form row d-flex flex-column">
+        <div class="form-group row">
+            <label for="post-title-input">Title</label>
+            <input type="text" id="post-title-input" value="{{posts.title}}"/>
+        </div>
+        <div class="form-group row">
+            <label for="post-body-input">Content</label>
+            <textarea id="post-body-input" cols="50" rows="5">{{posts.text}}</textarea>
+        </div>
+        <div class="form-group">
+        <button class="btn btn-primary text-white" id="update-post-btn" data-update-id="{{posts.id}}" type="button">Update</button>
+        <button class="btn btn-primary text-white" id="delete-post-btn" data-update-id="{{post.id}}" type="button">Delete</button>
+        </div>
+    </form>
+</section>
+<script src="/js/update.js"></script>
+<script src="/js/delete.js"></script>

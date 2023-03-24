@@ -1,0 +1,30 @@
+<article>
+    <div class="card p-2 m-1 row">
+        <h2 class="card-header text-white">{{post.title}}</h2>
+        <div class="card-body">
+            <p class="card-subtitle">Posted by {{post.user.name}} on {{format_date post.date_created}}</p>
+            <p>{{post.text}}</p>
+        </div>
+    </div>
+    <div class="card p-2 m-1 row">
+        <h3 class="card-header text-white">Comments:</h3>
+        <div class="card-body">
+            <form class="form card">
+                <label  for="comment-input" class="card-subtitle">Leave a comment</label>
+                <textarea id="comment-input" name="comment" data-comment-id="{{comment.post_id}}" cols="50" rows="5"></textarea>
+                <button class="btn btn-primary d-inlin-block text-center text-white" type="submit" id="comment-submit-btn">Comment</button>
+            </form>
+        </div>
+        <div class="card">
+            <ul class="list-group list-group-flush">
+            {{#each comments as |comment|}}
+            <li class="list-group-item">
+                <p>{{comment.text}}:</p>
+                <p>- {{comment.user.name}}, {{format_date comment.date_created}}</p>
+            </li>
+            {{/each}}
+            </ul>
+        </div>
+    </div>
+</article>
+ <script src="../js/comment.js"></script>

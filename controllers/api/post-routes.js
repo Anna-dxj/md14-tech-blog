@@ -4,16 +4,17 @@ const withAuth = require('../../utils/auth');
 
 router.post('/', withAuth, async (req, res) => {
     try {
-        const newPost = await Post.create({
-            ...req.body,
-            user_id: req.session
-        })
-
-        res.status(200).json(newPost)
+      const newPost = await Post.create({
+        title: req.body.title,
+        text: req.body.text,
+        user_id: req.session.user_id,
+      });
+  
+      res.status(200).json(newPost);
     } catch (error) {
-        res.status(500).json(error)
+      res.status(400).json(error);
     }
-});
+  });
 
 router.get('/', async (req, res) => {
     try {
@@ -21,7 +22,6 @@ router.get('/', async (req, res) => {
             include: [
                 {
                     model: Comment,
-                    attributes: ['text', 'date_created','user_id', 'post_id'],
                     include: {
                         model: User,
                         attributes: ['name']
@@ -45,7 +45,6 @@ router.get('/:id', async (req, res) => {
             include: [
                 {
                     model: Comment,
-                    attributes: ['text', 'date_created','user_id'],
                     include: {
                         model: User,
                         attributes: ['name']
